@@ -3,7 +3,8 @@ const form = document.querySelector('#todoform');
 const todoInput = document.querySelector('#list');
 const todoList = document.querySelector('.list-group');
 const clear = document.querySelector('.line');
-const sort = document.querySelector('.deck');
+const del = document.querySelector('#ikon');
+const sort = document.querySelector('#deck');
 
 eventListeners();
 
@@ -23,6 +24,9 @@ function loadAllTodosToList() {
 
 function addTodo(e) {
     const newTodo = todoInput.value.trim();
+    todoList.style.display = "block";
+    del.style.top = "7px"
+
 
     if (newTodo === "") {
         alert("Please write something");
@@ -58,6 +62,11 @@ function addTodoToList(newTodo) {
     todoInput.value = "";
 }
 
+del.addEventListener('click', dell);
+
+function dell(){
+    todoInput.value = "";
+}
 
 todoList.addEventListener('click', (e) => {
     if (e.target.className === 'sp line') {
@@ -66,24 +75,38 @@ todoList.addEventListener('click', (e) => {
 
     }
 })
+
 function deleteTodo(e) {
-    todoList.removeChild(e)
+    todoList.removeChild(e);
 }
 function deleteTodoFromStorage(deletetodo) {
     let todos = getTodosFromStorage();
-    todos.forEach(function(todo,index){
-       if( todo = deletetodo){
-        todos.splice(index,1);
+    todos.forEach(function (todo, index) {
+        if (todo = deletetodo) {
+            todos.splice(index, 1);
 
-       }
+        }
     })
 
     localStorage.setItem("todos", JSON.stringify(todos));
-    
+
 }
 
-sort.addEventListener('click', sortAscTodos);
+sort.addEventListener('click', sortt);
 
-function sortAscTodos(e){
-    console.log("salam")
+function sortt(e) {
+    sort.classList.toggle('rotate');
+    if (sort.classList.contains("rotate")) sortDescTodos();
+    else sortAscTodos();
+}
+
+function sortDescTodos() {
+    let todos = getTodosFromStorage();
+    
+
+}
+
+function sortAscTodos() {
+    let todos = getTodosFromStorage();
+
 }
