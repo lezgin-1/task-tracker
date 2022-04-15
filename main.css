@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 30%;
+    margin-top: 5rem;   
+    border-radius: 20px;
+    border: 1px solid #C4C4C4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.up{
+    width: 100%;
+    height: 30px;
+    background-color: crimson;
+}
+.todo{
+    margin:16px 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+.linux{
+    width: 85%;
+}
+.container img{
+    transition: transform 0.5s ease-out;
+  cursor: pointer;
+  width: 30px;
+  filter: invert(85%) sepia(21%) saturate(2%) hue-rotate(343deg) brightness(94%)
+    contrast(96%);
+    float: right;
+    margin:0 10px 15px 0;    
+}
+.rotate {
+    transform: rotate(180deg);
+  }
+
+.xbutton{
+    width: 100%;
+    position: relative;
+}
+.xbutton p{
+    position: absolute;
+    right: 25px;
+    top: 36px;
+}
+
+form input{
+    width: 100%;
+}
+
+.list-group{
+    width: 100%;
+    height: 150px;
+    border: 1px solid #C4C4C4;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.list-group li{
+    list-style: none;
+    padding: 10px 0 0 10px;
+    position: relative;
+}
+.list-group li .sp{
+    position:absolute;
+    right: 12px;
+    top: 5px;
+   
+}
+.line{
+    border: 1px solid #C4C4C4;
+    color: #C4C4C4;
+    border-radius: 50%;
+    padding:0 5.5px;
+    cursor: pointer;
+}
+
+.btn{
+    margin: 20px 0;
+    border-radius: 50px;
+    padding: 10px 30px 10px 0;
+    background-color: crimson;
+    border: none;
+    color: #ffffff;
+}
+.plus{
+    padding: 10px 15px;
+    border: none;
+    background-color:rgb(170, 8, 40);
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+@media(max-width:900px){
+    .container{
+        width: 40%;
+    }    
+}
+
+@media(max-width:700px){
+    .container{
+        width: 55%;
+    }    
+}
+
+@media(max-width:500px){
+    .container{
+        width: 70%;
+    }    
+}
+
+@media(max-width:400px){
+    .container{
+        width: 80%;
+    }    
+}
+
+@media(max-width:300px){
+    .container{
+        width: 90%;
+    }    
+}
