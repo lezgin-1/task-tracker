@@ -2,8 +2,7 @@
 const form = document.querySelector('#todoform');
 const todoInput = document.querySelector('#list');
 const todoList = document.querySelector('.list-group');
-const clear = document.querySelector('.line');
-const del = document.querySelector('#ikon');
+const del = document.querySelector('#lime');
 const sort = document.querySelector('#deck');
 
 eventListeners();
